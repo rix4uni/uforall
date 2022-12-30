@@ -13,6 +13,11 @@ git clone https://github.com/rix4uni/UForAll.git
 cd UForAll
 #pip3 install -r requirements.txt
 ```
+## Setup Api Key `Important` if you not setup api maybe the tool not work properly
+```
+# https://urlscan.io/user/signup (Paid/Free)
+# open urlscan.py add your api keys
+```
 
 ## Usage
 ```
