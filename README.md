@@ -12,6 +12,7 @@ UForAll is a fast url crawler this tool crawl all URLs number of different sourc
 git clone https://github.com/rix4uni/UForAll.git
 cd UForAll
 pip3 install -r requirements.txt
+chmod +x ./uforall.sh
 ```
 ## Setup Api Key `Important` if you not setup api maybe the tool not work properly
 ```
