@@ -13,7 +13,7 @@ def process_domain(domain):
     site = f"https://urlscan.io/api/v1/search/?q=domain:{domain}&size=10000"
 
     # Set the API endpoint and API key
-    api_keys = {'key': ['f17ab530-cd0c-4d73-9229-800780ad8999', '5b72d733-ef7b-48a7-bc07-34527f590d51',]}
+    api_keys = {'key': ['829e49ac-d524-4464-af9b-53a73a859693', 'a6fc703b-b297-4cdb-a383-c12b211a82ba',]}
     api = random.choice(api_keys['key'])
     # Set the headers
     headers = {
