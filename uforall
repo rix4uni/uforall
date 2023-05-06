@@ -25,8 +25,8 @@ showhelp(){
     echo -e "   -t, --threads       number of threads to use (default 50)"
     echo -e "   -h, --help          Help - Show this help"
     echo -e "${GREEN}USAGE EXAMPLES${RESET}"
-    echo -e "./uforall.sh -d domain.com -t 100"
-    echo -e "./uforall.sh -l interesting_subs.txt -t 100"
+    echo -e "uforall -d domain.com -t 100"
+    echo -e "uforall -l interesting_subs.txt -t 100"
     echo -e ""
 }
 
