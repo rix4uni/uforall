@@ -13,6 +13,7 @@ git clone https://github.com/rix4uni/UForAll.git
 cd UForAll
 pip3 install -r requirements.txt
 chmod +x ./uforall
+cp -r ../UForAll/ /usr/bin/
 ```
 ## Setup Api Key `Important` if you not setup api maybe the tool not work properly
 ```
