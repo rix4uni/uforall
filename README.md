@@ -29,20 +29,20 @@ OPTIONS:
 	-h, --help          Help - Show this help
 
 USAGE EXAMPLES:
-    ./uforall.sh -d domain.com -t 100
-    ./uforall.sh -l interesting_subs.txt -t 100
+    uforall.sh -d domain.com -t 100
+    uforall.sh -l interesting_subs.txt -t 100
 ```
 
 Note: must use `anew` to filter duplicates
 
 Single URL:
 ```
-./uforall.sh -d testphp.vulnweb.com -t 100 | anew
+uforall.sh -d testphp.vulnweb.com -t 100 | anew
 ```
 
 Multiple URLs:
 ```
-./uforall.sh -l interesting_subs.txt -t 100 | anew
+uforall.sh -l interesting_subs.txt -t 100 | anew
 ```
 
 ## If you want to use only one service
