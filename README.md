@@ -1,6 +1,6 @@
 # UForAll
 
-UForAll is a fast url crawler this tool crawl all URLs number of different sources
+**UForAll is a fast url crawler this tool crawl all URLs number of different sources**
 ### Sources 
 - [alienvault](https://otx.alienvault.com)
 - [WayBackMachine](http://web.archive.org)
