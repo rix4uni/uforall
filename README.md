@@ -12,7 +12,7 @@ UForAll is a fast url crawler this tool crawl all URLs number of different sourc
 git clone https://github.com/rix4uni/UForAll.git
 cd UForAll
 pip3 install -r requirements.txt
-chmod +x ./uforall.sh
+chmod +x ./uforall
 ```
 ## Setup Api Key `Important` if you not setup api maybe the tool not work properly
 ```
@@ -29,20 +29,20 @@ OPTIONS:
 	-h, --help          Help - Show this help
 
 USAGE EXAMPLES:
-    uforall.sh -d domain.com -t 100
-    uforall.sh -l interesting_subs.txt -t 100
+    uforall -d domain.com -t 100
+    uforall -l interesting_subs.txt -t 100
 ```
 
 Note: must use `anew` to filter duplicates
 
 Single URL:
 ```
-uforall.sh -d testphp.vulnweb.com -t 100 | anew
+uforall -d testphp.vulnweb.com -t 100 | anew
 ```
 
 Multiple URLs:
 ```
-uforall.sh -l interesting_subs.txt -t 100 | anew
+uforall -l interesting_subs.txt -t 100 | anew
 ```
 
 ## If you want to use only one service
