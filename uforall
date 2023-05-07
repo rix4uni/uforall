@@ -32,18 +32,18 @@ showhelp(){
 
 # Run the domain through the various scripts and write the output to the specified file
 SINGLE_DOMAIN(){
-	echo "$domain" | python3 ~/bin/SubDog/archive.py $threads | anew
-	echo "$domain" | python3 ~/bin/SubDog/otx.py $threads | anew
-	echo "$domain" | python3 ~/bin/SubDog/urlscan.py $threads | anew
-	echo "$domain" | python3 ~/bin/SubDog/commoncrawl.py $threads | anew
+	echo "$domain" | python3 ~/bin/UForAll/archive.py $threads | anew
+	echo "$domain" | python3 ~/bin/UForAll/otx.py $threads | anew
+	echo "$domain" | python3 ~/bin/UForAll/urlscan.py $threads | anew
+	echo "$domain" | python3 ~/bin/UForAll/commoncrawl.py $threads | anew
 }
 
 # Run the interesting subdomains through the scripts and append the output to the file
 MULTIPLE_DOMAIN(){
-	cat "$list" | python3 ~/bin/SubDog/archive.py $threads | anew
-	cat "$list" | python3 ~/bin/SubDog/otx.py $threads | anew
-	cat "$list" | python3 ~/bin/SubDog/urlscan.py $threads | anew
-	for url in $(cat "$list");do echo "$url" | python3 ~/bin/SubDog/commoncrawl.py $threads | anew;done
+	cat "$list" | python3 ~/bin/UForAll/archive.py $threads | anew
+	cat "$list" | python3 ~/bin/UForAll/otx.py $threads | anew
+	cat "$list" | python3 ~/bin/UForAll/urlscan.py $threads | anew
+	for url in $(cat "$list");do echo "$url" | python3 ~/bin/UForAll/commoncrawl.py $threads | anew;done
 }
 
 while [ -n "$1" ]; do
