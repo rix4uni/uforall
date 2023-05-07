@@ -13,7 +13,9 @@ git clone https://github.com/rix4uni/UForAll.git
 cd UForAll
 pip3 install -r requirements.txt
 chmod +x uforall
-cp -r ../UForAll/ /usr/bin/
+mkdir -p ~/bin
+if ! grep -qxF 'export PATH="$HOME/bin/UForAll:$PATH"' ~/.bashrc ; then echo -e '\nexport PATH="$HOME/bin/UForAll:$PATH"' >> ~/.bashrc ; fi
+cd .. && UForAll ~/bin && source ~/.bashrc
 ```
 ## Setup Api Key `Important` if you not setup api maybe the tool not work properly
 ```
