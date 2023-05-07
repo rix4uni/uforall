@@ -15,7 +15,7 @@ pip3 install -r requirements.txt
 chmod +x uforall
 mkdir -p ~/bin
 if ! grep -qxF 'export PATH="$HOME/bin/UForAll:$PATH"' ~/.bashrc ; then echo -e '\nexport PATH="$HOME/bin/UForAll:$PATH"' >> ~/.bashrc ; fi
-cd .. && UForAll ~/bin && source ~/.bashrc
+cd .. && mv UForAll ~/bin && source ~/.bashrc
 ```
 ## Setup Api Key `Important` if you not setup api maybe the tool not work properly
 ```
