@@ -25,15 +25,35 @@ cd .. && mv UForAll ~/bin && source ~/.bashrc
 
 ## Usage
 ```
+
+                 __  __     ______   ______     ______     ______     __         __
+                /\ \/\ \   /\  ___\ /\  __ \   /\  == \   /\  __ \   /\ \       /\ \
+                \ \ \_\ \  \ \  __\ \ \ \/\ \  \ \  __<   \ \  __ \  \ \ \____  \ \ \____
+                 \ \_____\  \ \_\    \ \_____\  \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_____\
+                  \/_____/   \/_/     \/_____/   \/_/ /_/   \/_/\/_/   \/_____/   \/_____/
+                                    coded by @rix4uni in INDIA
 OPTIONS:
-	-d, --domain        Single Target domain (domain.com)
-	-l, --list          Multiple Target domain (interesting_subs.txt)
-	-t, --threads       number of threads to use (default 50)
-	-h, --help          Help - Show this help
+   -d, --domain        Single Target domain (domain.com)
+   -l, --list          Multiple Target domain (interesting_subs.txt)
+   -t, --threads       number of threads to use (default 50)
+   -h, --help          Help - Show this help
 
 USAGE EXAMPLES:
-    uforall -d domain.com -t 100
-    uforall -l interesting_subs.txt -t 100
+   uforall -d domain.com -t 100
+   uforall -l interesting_subs.txt -t 100
+
+---If you want to use only one service---
+Single URL:
+   echo "testphp.vulnweb.com" | python3 archive.py -t 100
+   echo "testphp.vulnweb.com" | python3 otx.py -t 100
+   echo "testphp.vulnweb.com" | python3 urlscan.py -t 100
+   echo "testphp.vulnweb.com" | python3 commoncrawl.py -t 100
+
+Multiple URLs:
+   cat interesting_subs.txt | python3 archive.py -t 100
+   cat interesting_subs.txt | python3 otx.py -t 100
+   cat interesting_subs.txt | python3 urlscan.py -t 100
+   for url in $(cat interesting_subs.txt);do echo "$url" | python3 commoncrawl.py -t 100;done
 ```
 
 Note: must use `anew` to filter duplicates
@@ -46,22 +66,4 @@ uforall -d testphp.vulnweb.com -t 100 | anew
 Multiple URLs:
 ```
 uforall -l interesting_subs.txt -t 100 | anew
-```
-
-## If you want to use only one service
-
-Single URL:
-```
-echo testphp.vulnweb.com | python3 archive.py -t 100 | anew
-echo testphp.vulnweb.com | python3 otx.py -t 100 | anew
-echo testphp.vulnweb.com | python3 urlscan.py -t 100 | anew
-echo testphp.vulnweb.com | python3 commoncrawl.py -t 100 | anew
-```
-
-Multiple URLs:
-```
-cat interesting_subs.txt | python3 archive.py -t 100 | anew
-cat interesting_subs.txt | python3 otx.py -t 100 | anew
-cat interesting_subs.txt | python3 urlscan.py -t 100 | anew
-for url in $(cat interesting_subs.txt);do echo "$url" | python3 commoncrawl.py -t 100 | anew;done
 ```
