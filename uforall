@@ -29,6 +29,7 @@ showhelp(){
     echo -e "uforall -d domain.com -t 100"
     echo -e "uforall -l interesting_subs.txt -t 100"
     echo -e ""
+    echo -e "${GREEN}---If you want to use only one service---${RESET}"
     echo -e "${GREEN}Single URL:${RESET}"
     echo -e 'echo "testphp.vulnweb.com" | python3 archive.py -t 100'
     echo -e 'echo "testphp.vulnweb.com" | python3 otx.py -t 100'
