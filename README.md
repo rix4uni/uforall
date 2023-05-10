@@ -24,6 +24,17 @@ cd .. && mv UForAll ~/bin && source ~/.bashrc
 ```
 
 ## Usage
+
+Single URL:
+```
+uforall -d testphp.vulnweb.com -t 100 | anew
+```
+
+Multiple URLs:
+```
+uforall -l interesting_subs.txt -t 100 | anew
+```
+
 ```
 
                  __  __     ______   ______     ______     ______     __         __
@@ -54,16 +65,4 @@ Multiple URLs:
    cat interesting_subs.txt | python3 otx.py -t 100
    cat interesting_subs.txt | python3 urlscan.py -t 100
    for url in $(cat interesting_subs.txt);do echo "$url" | python3 commoncrawl.py -t 100;done
-```
-
-Note: must use `anew` to filter duplicates
-
-Single URL:
-```
-uforall -d testphp.vulnweb.com -t 100 | anew
-```
-
-Multiple URLs:
-```
-uforall -l interesting_subs.txt -t 100 | anew
 ```
