@@ -19,14 +19,27 @@ banner(){
 
 showhelp(){
     banner
-    echo -e "${GREEN}OPTIONS${RESET}"
+    echo -e "${GREEN}OPTIONS:${RESET}"
     echo -e "   -d, --domain        Single Target domain (domain.com)"
     echo -e "   -l, --list          Multiple Target domain (interesting_subs.txt)"
     echo -e "   -t, --threads       number of threads to use (default 50)"
     echo -e "   -h, --help          Help - Show this help"
-    echo -e "${GREEN}USAGE EXAMPLES${RESET}"
+    echo -e ""
+    echo -e "${GREEN}USAGE EXAMPLES:${RESET}"
     echo -e "uforall -d domain.com -t 100"
     echo -e "uforall -l interesting_subs.txt -t 100"
+    echo -e ""
+    echo -e "${GREEN}Single URL:${RESET}"
+    echo -e 'echo "testphp.vulnweb.com" | python3 archive.py -t 100'
+    echo -e 'echo "testphp.vulnweb.com" | python3 otx.py -t 100'
+    echo -e 'echo "testphp.vulnweb.com" | python3 urlscan.py -t 100'
+    echo -e 'echo "testphp.vulnweb.com" | python3 commoncrawl.py -t 100'
+    echo -e ""
+    echo -e "${GREEN}Multiple URLs:${RESET}"
+    echo -e "cat interesting_subs.txt | python3 archive.py -t 100"
+    echo -e "cat interesting_subs.txt | python3 otx.py -t 100"
+    echo -e "cat interesting_subs.txt | python3 urlscan.py -t 100"
+    echo -e 'for url in $(cat interesting_subs.txt);do echo "$url" | python3 commoncrawl.py -t 100;done'
     echo -e ""
 }
 
