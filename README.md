@@ -64,5 +64,5 @@ Multiple URLs:
    cat interesting_subs.txt | python3 archive.py -t 100
    cat interesting_subs.txt | python3 otx.py
    cat interesting_subs.txt | python3 urlscan.py -t 100
-   for url in $(cat interesting_subs.txt);do echo "$url" | python3 commoncrawl.py -t 100;done
+   cat interesting_subs.txt | python3 commoncrawl.py -t 100
 ```

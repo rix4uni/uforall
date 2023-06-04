@@ -27,24 +27,25 @@ if __name__ == "__main__":
     num_threads = args.threads
 
     # Read the domain name from stdin
-    domain = sys.stdin.read().strip()
+    for line in sys.stdin:
+        domain = line.strip()
 
-    # Perform an HTTP GET request to the URL
-    response = requests.get("https://index.commoncrawl.org/collinfo.json")
+        # Perform an HTTP GET request to the URL
+        response = requests.get("https://index.commoncrawl.org/collinfo.json")
 
-    # Parse the JSON data from the response
-    data = json.loads(response.text)
+        # Parse the JSON data from the response
+        data = json.loads(response.text)
 
-    # Create a ThreadPoolExecutor with the specified number of threads
-    with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        # Create a list of tasks to submit to the executor
-        tasks = []
-        for item in data:
-            url = item['cdx-api']
-            task = executor.submit(get_urls, url, domain)
-            tasks.append(task)
+        # Create a ThreadPoolExecutor with the specified number of threads
+        with ThreadPoolExecutor(max_workers=num_threads) as executor:
+            # Create a list of tasks to submit to the executor
+            tasks = []
+            for item in data:
+                url = item['cdx-api']
+                task = executor.submit(get_urls, url, domain)
+                tasks.append(task)
 
-        # Iterate over the completed tasks and print the results
-        for task in as_completed(tasks):
-            for url in task.result():
-                print(url)
+            # Iterate over the completed tasks and print the results
+            for task in as_completed(tasks):
+                for url in task.result():
+                    print(url)
