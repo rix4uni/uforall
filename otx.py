@@ -1,46 +1,29 @@
-import sys
-import json
 import requests
-import argparse
-from concurrent.futures import ThreadPoolExecutor
+import json
+import sys
 
-# Parse the command-line arguments
-parser = argparse.ArgumentParser()
-parser.add_argument('--threads', "-t", type=int, default=50, help='Number of threads to use')
-args = parser.parse_args()
+def get_urls(domain):
+    url = f"https://otx.alienvault.com/api/v1/indicators/domain/{domain}/url_list"
+    response = requests.get(url, params={"limit": 500, "page": 1})
+    
+    try:
+        response.raise_for_status()
+        data = response.json()
+        total_urls = data["full_size"]
+        total_pages = total_urls // 500 + 1
 
-# Read the domain from sys.stdin
-domains = [line.strip() for line in sys.stdin.readlines()]
+        for i in range(1, total_pages + 1):
+            response = requests.get(url, params={"limit": 500, "page": i})
+            response.raise_for_status()
+            data = response.json()
+            url_list = data["url_list"]
+            for url_data in url_list:
+                print(url_data["url"])
+    
+    except (requests.HTTPError, requests.ConnectionError, json.JSONDecodeError) as e:
+        pass
 
-# Define a function to process a single domain
-def process_domain(domain):
-    site = f"https://otx.alienvault.com/api/v1/indicators/domain/{domain}/url_list?limit=500"
-
-    # Set the headers
-    headers = {
-        "Content-Type": "application/json",
-        "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-    }
-
-    # Send the GET request and get the response
-    response = requests.get(site, headers=headers)
-
-    # Parse the response as JSON
-    data = response.json()
-
-    # Extract the page and task URLs from the results
-    otx_urls = [result['url'] for result in data['url_list']]
-
-    # Merge the page and task URLs and sort them
-    urls = list(set(otx_urls))
-    urls.sort()
-
-    # Print the URLs one per line
-    for url in urls:
-        print(url)
-
-# Create a ThreadPoolExecutor with the specified number of threads
-with ThreadPoolExecutor(max_workers=args.threads) as executor:
-    # Submit the tasks to the executor
-    for domain in domains:
-        executor.submit(process_domain, domain)
+if __name__ == "__main__":
+    for line in sys.stdin:
+        domain = line.strip()
+        get_urls(domain)
