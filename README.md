@@ -56,13 +56,13 @@ USAGE EXAMPLES:
 ---If you want to use only one service---
 Single URL:
    echo "testphp.vulnweb.com" | python3 archive.py -t 100
-   echo "testphp.vulnweb.com" | python3 otx.py -t 100
+   echo "testphp.vulnweb.com" | python3 otx.py
    echo "testphp.vulnweb.com" | python3 urlscan.py -t 100
    echo "testphp.vulnweb.com" | python3 commoncrawl.py -t 100
 
 Multiple URLs:
    cat interesting_subs.txt | python3 archive.py -t 100
-   cat interesting_subs.txt | python3 otx.py -t 100
+   cat interesting_subs.txt | python3 otx.py
    cat interesting_subs.txt | python3 urlscan.py -t 100
    for url in $(cat interesting_subs.txt);do echo "$url" | python3 commoncrawl.py -t 100;done
 ```
