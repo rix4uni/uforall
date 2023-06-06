@@ -31,16 +31,16 @@ showhelp(){
     echo -e ""
     echo -e "${GREEN}---If you want to use only one service---${RESET}"
     echo -e "${GREEN}Single URL:${RESET}"
-    echo -e '   echo "testphp.vulnweb.com" | python3 archive.py -t 100'
-    echo -e '   echo "testphp.vulnweb.com" | python3 otx.py'
-    echo -e '   echo "testphp.vulnweb.com" | python3 urlscan.py -t 100'
-    echo -e '   echo "testphp.vulnweb.com" | python3 commoncrawl.py -t 100'
+    echo -e '   echo "testphp.vulnweb.com" | python3 ~/bin/UForAll/archive.py -t 100'
+    echo -e '   echo "testphp.vulnweb.com" | python3 ~/bin/UForAll/otx.py'
+    echo -e '   echo "testphp.vulnweb.com" | python3 ~/bin/UForAll/urlscan.py -t 100'
+    echo -e '   echo "testphp.vulnweb.com" | python3 ~/bin/UForAll/commoncrawl.py -t 100'
     echo -e ""
     echo -e "${GREEN}Multiple URLs:${RESET}"
-    echo -e "   cat interesting_subs.txt | python3 archive.py -t 100"
-    echo -e "   cat interesting_subs.txt | python3 otx.py"
-    echo -e "   cat interesting_subs.txt | python3 urlscan.py -t 100"
-    echo -e "   cat interesting_subs.txt | python3 commoncrawl.py -t 100"
+    echo -e "   cat interesting_subs.txt | python3 ~/bin/UForAll/archive.py -t 100"
+    echo -e "   cat interesting_subs.txt | python3 ~/bin/UForAll/otx.py"
+    echo -e "   cat interesting_subs.txt | python3 ~/bin/UForAll/urlscan.py -t 100"
+    echo -e "   cat interesting_subs.txt | python3 ~/bin/UForAll/commoncrawl.py -t 100"
     echo -e ""
 }
 
