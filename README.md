@@ -9,6 +9,7 @@
 
 ## Installation
 ```
+go install -v github.com/tomnomnom/anew@latest
 git clone https://github.com/rix4uni/UForAll.git
 cd UForAll
 pip3 install -r requirements.txt
