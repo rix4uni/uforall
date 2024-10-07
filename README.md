@@ -1,6 +1,6 @@
-## UForAll
+## uforall
 
-**UForAll is a fast url crawler this tool crawl all URLs number of different sources**
+**uforall is a fast url crawler this tool crawl all URLs number of different sources**
 ### Sources 
 - [alienvault](https://otx.alienvault.com)
 - [WayBackMachine](http://web.archive.org)
@@ -23,7 +23,7 @@ Or download [binary release](https://github.com/rix4uni/uforall/releases) for yo
 
 ## Compile from source
 ```
-git clone --depth 1 github.com/rix4uni/UForAll.git
+git clone --depth 1 github.com/rix4uni/uforall.git
 cd uforall; go install
 ```
 
