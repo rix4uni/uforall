@@ -54,3 +54,32 @@ Run specific tools:
 ```
 cat subs.txt | uforall -t otx, urlscan
 ```
+
+### Use Domain name instead of subdomain list you can save lot of time
+```
+# cat withoutprotocolsubs.txt
+rest.vulnweb.com
+testasp.vulnweb.com
+testhtml5.vulnweb.com
+testaspnet.vulnweb.com
+testphp.vulnweb.com
+vulnweb.com
+
+
+# With subdomains
+time cat withoutprotocolsubs.txt | uforall -silent -t all 2>/dev/null | unew -el -i -t | wc -l
+12953
+
+real    0m30.728s
+user    0m0.120s
+sys     0m0.013s
+
+
+# With domain, saved 25 seconds and output is same
+time echo "vulnweb.com" | uforall -silent -t all 2>/dev/null | unew -el -i -t | wc -l
+12953
+
+real    0m6.447s
+user    0m0.060s
+sys     0m0.035s
+```
