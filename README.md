@@ -28,7 +28,7 @@ cd uforall; go install
 ```
 
 ## Usage
-```
+```yaml
 Usage of uforall:
   -silent
         silent mode.
@@ -41,22 +41,22 @@ Usage of uforall:
 ## Usage Examples
 
 Single URL:
-```
+```yaml
 echo "testphp.vulnweb.com" | uforall
 ```
 
 Multiple URLs:
-```
+```yaml
 cat subs.txt | uforall
 ```
 
 Run specific tools:
-```
+```yaml
 cat subs.txt | uforall -t otx, urlscan
 ```
 
 ### Use Domain name instead of subdomain list you can save lot of time
-```
+```yaml
 # cat withoutprotocolsubs.txt
 rest.vulnweb.com
 testasp.vulnweb.com
